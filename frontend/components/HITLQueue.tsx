@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Shield, CheckCircle, XCircle, AlertTriangle, Key, Clock, DollarSign } from "lucide-react";
+import { Shield, CheckCircle, XCircle, Key, Clock } from "lucide-react";
 import { HITLIncident } from "@/lib/types";
 import { INITIAL_HITL_INCIDENTS } from "@/lib/mockData";
 import { interposeClient } from "@/lib/api";
@@ -35,23 +35,27 @@ export const HITLQueue: React.FC<HITLQueueProps> = ({ onIncidentUpdated }) => {
   return (
     <div className="space-y-6">
       {/* Top Header Card */}
-      <div className="bg-obsidian-800 border border-obsidian-700 rounded-xl p-5">
-        <div className="flex items-center gap-2 text-alert font-mono text-xs font-semibold uppercase tracking-wider">
-          <Shield className="w-4 h-4" /> Human-in-the-Loop (HITL) Authorization Queue
+      <div className="cyber-card rounded-2xl p-6 border border-slate-800">
+        <div className="flex items-center gap-2 text-amber-400 font-sans text-xs font-bold uppercase tracking-wider">
+          <Shield className="w-4 h-4 text-amber-400" />
+          <span>Human-in-the-Loop (HITL) Authorization Queue</span>
         </div>
-        <h2 className="text-lg font-bold text-slate-100 font-mono mt-1">
+        <h2 className="text-xl font-bold text-white font-sans tracking-tight mt-1.5">
           Cryptographic HMAC-SHA256 Irreversible Gate
         </h2>
-        <p className="text-xs text-slate-400 mt-1 max-w-3xl">
+        <p className="text-sm text-slate-300 font-sans mt-1.5 max-w-4xl leading-relaxed">
           High-liability enterprise actions (wire disbursements, database drops, root filesystem changes) immediately
           halt agent execution and generate a signed HMAC-SHA256 challenge token requiring explicit human sign-off.
         </p>
       </div>
 
       {activeFeedback && (
-        <div className="p-3.5 rounded-lg bg-shield/10 border border-shield/40 text-shield text-xs font-mono flex items-center justify-between">
-          <span>{activeFeedback}</span>
-          <button onClick={() => setActiveFeedback(null)} className="text-slate-400 hover:text-slate-200">
+        <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/40 text-emerald-300 text-sm font-sans flex items-center justify-between shadow-lg">
+          <span className="font-medium">{activeFeedback}</span>
+          <button
+            onClick={() => setActiveFeedback(null)}
+            className="text-slate-400 hover:text-white font-medium text-xs px-2 py-1"
+          >
             Dismiss
           </button>
         </div>
@@ -64,57 +68,57 @@ export const HITLQueue: React.FC<HITLQueueProps> = ({ onIncidentUpdated }) => {
           return (
             <div
               key={inc.actionId}
-              className={`rounded-xl border p-5 transition ${
+              className={`cyber-card rounded-2xl p-6 border transition shadow-xl ${
                 isPending
-                  ? "border-alert/50 bg-alert/5 shadow-[0_0_15px_rgba(245,158,11,0.1)]"
+                  ? "border-amber-500/50 bg-amber-950/20 shadow-[0_0_25px_rgba(245,158,11,0.12)]"
                   : inc.status === "APPROVED"
-                  ? "border-shield/40 bg-shield/5"
-                  : "border-breach/40 bg-breach/5"
+                  ? "border-emerald-500/40 bg-emerald-950/20"
+                  : "border-rose-500/40 bg-rose-950/20"
               }`}
             >
-              <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-obsidian-700">
-                <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-800">
+                <div className="flex items-center gap-3.5">
                   <span
-                    className={`px-2.5 py-1 rounded text-xs font-mono font-bold ${
+                    className={`px-3 py-1 rounded-md text-xs font-sans font-bold uppercase tracking-wider ${
                       isPending
-                        ? "bg-alert text-obsidian-950"
+                        ? "bg-amber-500 text-slate-950"
                         : inc.status === "APPROVED"
-                        ? "bg-shield text-obsidian-950"
-                        : "bg-breach text-obsidian-950"
+                        ? "bg-emerald-500 text-slate-950"
+                        : "bg-rose-500 text-slate-950"
                     }`}
                   >
                     {inc.status}
                   </span>
                   <div>
-                    <h3 className="font-mono text-sm font-bold text-slate-100 flex items-center gap-2">
-                      <span>Action ID: {inc.actionId}</span>
-                      <span className="text-taint">({inc.toolName})</span>
+                    <h3 className="font-sans text-base font-bold text-white flex items-center gap-2">
+                      <span>Action ID: <code className="text-cyan-300 font-mono">{inc.actionId}</code></span>
+                      <span className="text-amber-400 font-mono text-sm">({inc.toolName})</span>
                     </h3>
-                    <div className="text-[11px] font-mono text-slate-400 flex items-center gap-3 mt-0.5">
-                      <span className="flex items-center gap-1">
-                        <Clock className="w-3 h-3" /> TTL: 300s
+                    <div className="text-xs font-sans text-slate-400 flex items-center gap-4 mt-1">
+                      <span className="flex items-center gap-1.5">
+                        <Clock className="w-3.5 h-3.5 text-slate-400" /> TTL: 300s
                       </span>
-                      <span className="text-breach font-bold">
-                        Risk Score: {(inc.riskScore * 100).toFixed(0)}%
+                      <span className="text-rose-400 font-semibold">
+                        Risk Score: {(inc.riskScore * 100).toFixed(0)}% (CRITICAL)
                       </span>
                     </div>
                   </div>
                 </div>
 
                 {isPending && (
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2.5">
                     <button
                       onClick={() => handleQuarantine(inc.actionId)}
-                      className="px-3 py-1.5 rounded-lg border border-breach/40 bg-breach/10 hover:bg-breach/20 text-breach text-xs font-mono font-bold flex items-center gap-1.5 transition cursor-pointer"
+                      className="px-4 py-2 rounded-xl border border-rose-500/40 bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 text-xs font-sans font-bold flex items-center gap-1.5 transition cursor-pointer"
                     >
-                      <XCircle className="w-3.5 h-3.5" />
+                      <XCircle className="w-4 h-4" />
                       <span>Quarantine</span>
                     </button>
                     <button
                       onClick={() => handleApprove(inc.actionId)}
-                      className="px-4 py-1.5 rounded-lg bg-shield hover:bg-shield/90 text-obsidian-950 text-xs font-mono font-bold flex items-center gap-1.5 transition shadow-[0_0_15px_rgba(16,185,129,0.3)] cursor-pointer"
+                      className="px-5 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-sans font-bold flex items-center gap-1.5 transition shadow-[0_0_20px_rgba(16,185,129,0.3)] cursor-pointer"
                     >
-                      <CheckCircle className="w-3.5 h-3.5" />
+                      <CheckCircle className="w-4 h-4" />
                       <span>Approve with HMAC Token</span>
                     </button>
                   </div>
@@ -122,22 +126,26 @@ export const HITLQueue: React.FC<HITLQueueProps> = ({ onIncidentUpdated }) => {
               </div>
 
               {/* Intercepted Parameters */}
-              <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="p-3.5 rounded-lg bg-obsidian-950 border border-obsidian-800 font-mono text-xs">
-                  <div className="text-[10px] text-slate-400 uppercase mb-2">Proposed Tool Arguments:</div>
-                  <pre className="text-slate-300 text-[11px] overflow-x-auto">
+              <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="p-4 rounded-xl bg-black/60 border border-slate-800">
+                  <div className="text-xs font-sans font-bold text-slate-400 uppercase tracking-wider mb-2">
+                    Proposed Tool Arguments:
+                  </div>
+                  <pre className="text-cyan-200/90 font-mono text-xs overflow-x-auto leading-relaxed">
                     {JSON.stringify(inc.arguments, null, 2)}
                   </pre>
                 </div>
 
-                <div className="p-3.5 rounded-lg bg-obsidian-950 border border-obsidian-800 font-mono text-xs space-y-2">
-                  <div className="text-[10px] text-slate-400 uppercase">Cryptographic Token Challenge:</div>
-                  <div className="p-2 rounded bg-obsidian-900 border border-obsidian-700 text-[10px] text-taint break-all flex items-center gap-2">
-                    <Key className="w-4 h-4 shrink-0 text-alert" />
+                <div className="p-4 rounded-xl bg-black/60 border border-slate-800 space-y-2.5">
+                  <div className="text-xs font-sans font-bold text-slate-400 uppercase tracking-wider">
+                    Cryptographic Token Challenge:
+                  </div>
+                  <div className="p-3 rounded-lg bg-slate-950 border border-slate-800 text-xs font-mono text-cyan-300 break-all flex items-center gap-2.5">
+                    <Key className="w-4 h-4 shrink-0 text-amber-400" />
                     <span>{inc.tokenChallenge}</span>
                   </div>
-                  <div className="text-[11px] text-slate-400">
-                    Signature: SHA-256 HMAC over <code className="text-slate-200">action_id:tool:args_hash:expires_at</code>
+                  <div className="text-xs text-slate-400 font-sans mt-2">
+                    Signature: SHA-256 HMAC over <code className="text-slate-200 font-mono text-[11px]">action_id:tool:args_hash:expires_at</code>
                   </div>
                 </div>
               </div>

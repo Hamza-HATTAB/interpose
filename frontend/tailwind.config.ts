@@ -11,10 +11,11 @@ const config: Config = {
       colors: {
         obsidian: {
           950: "#030508",
-          900: "#06080d",
-          800: "#0b1019",
-          700: "#111927",
-          600: "#1e293b",
+          900: "#05080e",
+          850: "#0a101a",
+          800: "#0f172a",
+          700: "#1e293b",
+          600: "#334155",
         },
         breach: "#f43f5e",   // Crimson Breach
         shield: "#10b981",   // Emerald Shield
@@ -22,11 +23,11 @@ const config: Config = {
         alert: "#f59e0b",    // Amber Alert
       },
       fontFamily: {
-        mono: ["JetBrains Mono", "Menlo", "Monaco", "Courier New", "monospace"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "Plus Jakarta Sans", "Inter", "sans-serif"],
+        mono: ["var(--font-mono)", "JetBrains Mono", "monospace"],
       },
       backgroundImage: {
-        "cyber-grid": "linear-gradient(to right, #111927 1px, transparent 1px), linear-gradient(to bottom, #111927 1px, transparent 1px)",
+        "cyber-grid": "linear-gradient(to right, rgba(17, 25, 39, 0.6) 1px, transparent 1px), linear-gradient(to bottom, rgba(17, 25, 39, 0.6) 1px, transparent 1px)",
       },
     },
   },
