@@ -186,8 +186,7 @@ interpose/
 
 ## 7. AUTHOR & CONTACT
 
-* **Candidate:** Hamza Riadh Hattab
+* **Author:** Hamza Riadh Hattab
 * **Email:** [hamza.riadh.htb@gmail.com](mailto:hamza.riadh.htb@gmail.com)
 * **GitHub:** [github.com/Hamza-HATTAB](https://github.com/Hamza-HATTAB)
-* **Target Roles:** Remote AI Security Engineer / LLMOps Security Specialist / Applied ML Safety Engineer
-* **Location:** Algiers, Algeria (4-hour daily overlap with Toronto/Montreal EST)
+* **LinkedIn:** [linkedin.com/in/hamza-riadh-h-44a297345](https://www.linkedin.com/in/hamza-riadh-h-44a297345/)

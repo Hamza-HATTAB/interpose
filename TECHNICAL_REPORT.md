@@ -1,9 +1,8 @@
 # INTERPOSE: Deterministic Security Reference Monitor, Dynamic Taint Tracking & Adaptive Red-Teaming for Tool-Calling AI Agents
 
 **Author:** Hamza Riadh Hattab  
-**Affiliation:** 4th-Year AI Systems Engineering Student, USTHB (Algiers, Algeria)  
-**Target Roles:** Remote AI Security Engineer / LLMOps Security Specialist / Applied ML Safety Engineer (Toronto/Montreal Scale-Ups: Armilla AI, Private AI, Cohere, Coveo, Ada)  
-**Hardware Platform:** Local NVIDIA GeForce RTX 4060 Laptop GPU (8,188 MiB VRAM, Driver 580.173, CUDA 13.0)  
+**Affiliation:** AI Engineering, USTHB (Algiers, Algeria)  
+**Hardware Platform:** NVIDIA GeForce RTX 4060 Laptop GPU (8,188 MiB VRAM, CUDA 13.0)  
 **Evaluation Targets:** `Qwen2.5-7B-Instruct-Q4_K_M`, `Llama-3.2-3B`, `AgentDojo Benchmark Suite`  
 **License:** MIT License  
 
