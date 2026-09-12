@@ -5,20 +5,20 @@
 [![Frontend: Next.js 14 LTS](https://img.shields.io/badge/Frontend-Next.js%2014.2.35%20LTS-black.svg)](frontend/)
 [![Attack Success Rate](https://img.shields.io/badge/ASR-0.0%25%20(36%2F36%20Blocked)-brightgreen.svg)](TECHNICAL_REPORT.md)
 [![Median Latency](https://img.shields.io/badge/Latency-%3C0.038%20ms-cyan.svg)](TECHNICAL_REPORT.md)
-[![Target Roles](https://img.shields.io/badge/Target-Canadian%20AI%20Security%20Scale--Ups-purple.svg)](#portfolio-context)
 
 > **Deterministic Security Reference Monitor, Dynamic Taint Tracking & Adaptive Red-Teaming for Autonomous Tool-Calling AI Agents.**  
 > Proving that autonomous agent security cannot be entrusted to stochastic in-model prompts, but must be enforced by a deterministic reference monitor outside the model.
 
 ---
 
-## 1. PORTFOLIO CONTEXT: THE COMPLETE STORY
+## 1. SYSTEM CONTEXT & DESIGN PRINCIPLES
 
-INTERPOSE is the third and crowning project in my systems engineering portfolio targeting **remote AI Security Engineer, LLMOps Security Specialist, and Applied ML Safety roles at Canadian scale-ups** (Toronto/Montreal: Armilla AI, Private AI, Cohere, Coveo, Ada):
+Autonomous tool-calling agents operate in untrusted environments where model inputs inevitably mix instructions with untrusted external data (invoices, emails, web search results). INTERPOSE addresses the fundamental flaw of in-model prompt guardrails: **stochastic models cannot self-police**.
 
-1. **[Project 1 — Warrant](https://github.com/Hamza-HATTAB/warrant):** *Built reliably* — Claim-level attributed multi-hop RAG with calibrated DeBERTa NLI and abstention contracts.
-2. **[Project 2 — OptiServe](https://optiserve.vercel.app):** *Made fast & cheap* — PyTorch reasoning distillation, AirLLM layer-wise 70B streaming, and speculative decoding.
-3. **Project 3 — INTERPOSE (This Project):** *Break it on purpose* — Deterministic reference monitor with dynamic taint analysis and adaptive red-teaming, enforcing that agent security must be managed outside the probabilistic model.
+By treating agent security as a formal **Information Flow Control (IFC)** problem, INTERPOSE enforces deterministic invariants outside the LLM execution loop:
+1. **Provenance Tracking:** Dynamic taint tracking with join semi-lattice guarantees.
+2. **Deterministic AST Validation:** Strict syntactic AST-level arguments verification before execution.
+3. **Cryptographic HITL Sign-Off:** HMAC-SHA256 tokens gating irreversible actions (wire transfers, database mutations).
 
 ---
 
@@ -187,7 +187,7 @@ interpose/
 ## 7. AUTHOR & CONTACT
 
 * **Candidate:** Hamza Riadh Hattab
-* **Email:** [hhamzariadh@gmail.com](mailto:hhamzariadh@gmail.com)
+* **Email:** [hamza.riadh.htb@gmail.com](mailto:hamza.riadh.htb@gmail.com)
 * **GitHub:** [github.com/Hamza-HATTAB](https://github.com/Hamza-HATTAB)
 * **Target Roles:** Remote AI Security Engineer / LLMOps Security Specialist / Applied ML Safety Engineer
 * **Location:** Algiers, Algeria (4-hour daily overlap with Toronto/Montreal EST)

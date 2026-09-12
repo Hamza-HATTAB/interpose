@@ -141,9 +141,9 @@ For irreversible actions (e.g., executing a CAD $45,000 wire transfer or droppin
 
 ---
 
-## 5. CANADIAN AI SCALE-UP INTERVIEW DEFENSE GUIDE
+## 5. ARCHITECTURAL SECURITY QUESTIONS & THREAT MITIGATIONS
 
-This section prepares technical responses for interview loops at Canadian AI leaders (Armilla AI, Private AI, Cohere, Coveo, Ada).
+The following section documents key systems architecture inquiries regarding reference monitor invariants and threat surface defenses.
 
 ### Q1: "Why not fine-tune the model or use RLHF to resist prompt injection directly?"
 **Answer:** "RLHF and safety fine-tuning shift probabilistic token distributions, but they cannot provide deterministic safety guarantees. An autonomous agent with financial or bash execution privileges operates in an adversarial environment where even a 1% failure rate represents catastrophic liability. By decoupling security policy enforcement from probabilistic inference and placing it in an external reference monitor, we achieve provable non-bypassability regardless of prompt phrasing."

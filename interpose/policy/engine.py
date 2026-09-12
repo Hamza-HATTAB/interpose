@@ -90,7 +90,7 @@ class PolicyEngine:
     def evaluate(self, tool_name: str, arguments: dict[str, Any]) -> PolicyVerdict:
         start_time = time.perf_counter()
 
-        # Step 1: Check if tool requires Human-in-the-Loop review
+        # Evaluate if tool requires cryptographic human authorization
         tool_sinks = self.sinks.get(tool_name, [])
         for sink in tool_sinks:
             if sink.is_irreversible:

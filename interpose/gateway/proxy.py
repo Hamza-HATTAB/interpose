@@ -55,10 +55,10 @@ class InterposeGatewayProxy:
     ) -> ProxyResult:
         event_id = f"evt_{secrets.token_hex(6)}"
 
-        # Step 1: Policy evaluation by the Reference Monitor
+        # Reference monitor policy evaluation
         verdict = self.policy_engine.evaluate(tool_name, arguments)
 
-        # Step 2: Handle Irreversible actions requiring HITL sign-off
+        # Gated execution requiring human sign-off
         if verdict.decision == Decision.REQUIRE_HITL:
             if hitl_token:
                 valid, msg = self.hitl_gate.verify_token(hitl_token, tool_name, arguments)
@@ -118,7 +118,7 @@ class InterposeGatewayProxy:
                 error="Action halted. Irreversible execution requires human authorization token.",
             )
 
-        # Step 3: Handle Security Policy Violations (DENY)
+        # Reject policy violations
         if verdict.decision == Decision.DENY:
             self._log_event(
                 event_id=event_id,
