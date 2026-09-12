@@ -5,68 +5,72 @@
 @tailwind utilities;
 
 :root {
-  --background: #05080e;
+  --background: #02050b;
   --foreground: #f8fafc;
 }
 
 /* Natural responsive zoom: scales all rem-based typography and spacing proportionally */
 html {
   font-size: 16px;
+  background-color: #02050b;
 }
 
 @media (min-width: 1024px) {
   html {
-    font-size: 17.5px;
+    font-size: 17px;
   }
 }
 
 @media (min-width: 1536px) {
   html {
-    font-size: 18.5px;
+    font-size: 18px;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  background-image: radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.07) 0%, transparent 60%),
-                    linear-gradient(to right, rgba(17, 25, 39, 0.6) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(17, 25, 39, 0.6) 1px, transparent 1px);
-  background-size: 100% 100%, 48px 48px, 48px 48px;
+  background-image: radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.08) 0%, transparent 55%),
+                    radial-gradient(circle at 100% 50%, rgba(244, 63, 94, 0.04) 0%, transparent 45%),
+                    linear-gradient(to right, rgba(15, 23, 42, 0.45) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(15, 23, 42, 0.45) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
-/* Crisp elevated cyber-card utility */
+/* True Obsidian Glassmorphism: Deep translucent glass, 24px blur, specular highlight */
 .cyber-card {
-  background: rgba(10, 16, 26, 0.88);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.6);
+  background: rgba(6, 11, 20, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+              0 8px 32px -4px rgba(0, 0, 0, 0.7);
 }
 
 .cyber-card-hover {
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .cyber-card-hover:hover {
   border-color: rgba(6, 182, 212, 0.35);
-  box-shadow: 0 8px 32px -4px rgba(6, 182, 212, 0.15);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+              0 12px 40px -4px rgba(6, 182, 212, 0.18);
 }
 
-/* Custom scrollbar for cyber aesthetic */
+/* Custom scrollbars for cyber console */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #05080e;
+  background: #02050b;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #1e293b;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
