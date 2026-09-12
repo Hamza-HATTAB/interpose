@@ -43,12 +43,12 @@ export default function Home() {
         pendingIncidentCount={pendingIncidents}
       />
 
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 py-8 space-y-8">
+      <main className="flex-1 max-w-[1440px] w-full mx-auto px-6 lg:px-8 py-8 space-y-8">
         {/* Tab 1: Executive Overview */}
         {activeTab === "overview" && (
           <div className="space-y-8 animate-in fade-in duration-200">
             {/* Architectural Thesis Hero */}
-            <div className="relative cyber-card rounded-2xl p-7 lg:p-10 border border-slate-800 overflow-hidden shadow-2xl">
+            <div className="relative cyber-card rounded-2xl p-8 lg:p-10 border border-slate-800 overflow-hidden shadow-2xl">
               <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
               <div className="relative z-10 max-w-3xl space-y-4">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-sans font-semibold">
@@ -151,8 +151,8 @@ export default function Home() {
       </main>
 
       {/* Clean Technical Footer */}
-      <footer className="border-t border-slate-800 bg-[#03060a] py-8 px-4 mt-12">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-sans text-slate-400">
+      <footer className="border-t border-slate-800 bg-[#03060a] py-8 px-6 lg:px-8 mt-12">
+        <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-sans text-slate-400">
           <div>
             <div className="text-white font-bold text-sm mb-1">
               INTERPOSE: Autonomous Agent Reference Monitor & Information Flow Control (IFC)

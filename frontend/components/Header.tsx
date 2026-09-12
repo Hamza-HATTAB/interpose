@@ -20,84 +20,53 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <header className="border-b border-slate-800 bg-[#05080e]/95 backdrop-blur-md sticky top-0 z-50 shadow-lg">
-      {/* Top Ribbon: Authentic Security Engine Identity */}
-      <div className="bg-[#03060a] px-4 py-1.5 border-b border-slate-800/80 text-xs flex flex-wrap items-center justify-between">
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-          <span className="font-semibold tracking-wide text-slate-200 uppercase text-[11px] font-mono">
-            INTERPOSE ENGINE v0.1.0-alpha
-          </span>
-          <span className="text-slate-600 hidden md:inline">|</span>
-          <span className="text-slate-300 text-xs hidden md:inline font-sans font-medium">
-            Autonomous Agent Reference Monitor & Information Flow Control (IFC) Lattice
-          </span>
-          <span className="text-slate-600 hidden md:inline">|</span>
-          <span className="text-cyan-400 text-xs font-mono hidden lg:inline">
-            AgentDojo Benchmark Verified
-          </span>
-        </div>
-        <div className="flex items-center gap-4 text-xs font-sans">
-          <span className="text-slate-400">
-            Engineered by <strong className="text-slate-200 font-semibold">Hamza Hattab</strong>
-          </span>
-          <a
-            href="https://github.com/Hamza-HATTAB/interpose"
-            target="_blank"
-            rel="noreferrer"
-            className="text-cyan-400 hover:text-cyan-300 hover:underline flex items-center gap-1 font-mono text-[11px]"
-          >
-            GitHub <ExternalLink className="w-3 h-3" />
-          </a>
-        </div>
-      </div>
-
       {/* Main HUD Bar */}
-      <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shadow-[0_0_20px_rgba(6,182,212,0.25)]">
-            <Shield className="w-5 h-5 text-cyan-400" />
+      <div className="max-w-[1440px] mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-5">
+        <div className="flex items-center gap-3.5">
+          <div className="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shadow-[0_0_25px_rgba(6,182,212,0.25)]">
+            <Shield className="w-6 h-6 text-cyan-400" />
           </div>
           <div>
-            <div className="flex items-center gap-2.5">
-              <h1 className="text-xl font-extrabold tracking-tight text-white font-sans">
+            <div className="flex items-center gap-3">
+              <h1 className="text-2xl font-extrabold tracking-tight text-white font-sans">
                 INTERPOSE
               </h1>
-              <span className="px-2 py-0.5 text-[10px] font-mono font-semibold rounded-md bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
-                SENTINEL HUD
+              <span className="px-2.5 py-0.5 text-xs font-mono font-semibold rounded-md bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+                v0.1.0
               </span>
             </div>
-            <p className="text-xs text-slate-300 font-sans font-normal mt-0.5">
+            <p className="text-sm text-slate-300 font-sans font-normal mt-0.5">
               Deterministic Security Reference Monitor & Dynamic Taint Tracking
             </p>
           </div>
         </div>
 
-        {/* Global Security Metrics Badges */}
-        <div className="flex items-center gap-3">
-          <div className="hidden sm:flex flex-col px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800">
-            <span className="text-slate-400 text-[10px] uppercase font-sans font-semibold tracking-wider">DEFENSE POSTURE</span>
-            <span className="text-emerald-400 font-sans font-bold text-xs flex items-center gap-1.5 mt-0.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> ZERO TRUST (ACTIVE)
+        {/* Global Security Metrics Badges & Controls */}
+        <div className="flex items-center gap-4">
+          <div className="hidden sm:flex flex-col px-3.5 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800">
+            <span className="text-slate-400 text-[11px] uppercase font-sans font-semibold tracking-wider">DEFENSE POSTURE</span>
+            <span className="text-emerald-400 font-sans font-bold text-sm flex items-center gap-1.5 mt-0.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" /> ZERO TRUST (ACTIVE)
             </span>
           </div>
 
-          <div className="hidden sm:flex flex-col px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800">
-            <span className="text-slate-400 text-[10px] uppercase font-sans font-semibold tracking-wider">EMPIRICAL BENCHMARK</span>
-            <span className="text-emerald-400 font-mono font-bold text-xs mt-0.5">
-              100% Intercept (AgentDojo)
+          <div className="hidden md:flex flex-col px-3.5 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800">
+            <span className="text-slate-400 text-[11px] uppercase font-sans font-semibold tracking-wider">AGENTDOJO BENCHMARK</span>
+            <span className="text-emerald-400 font-mono font-bold text-sm mt-0.5">
+              100% Intercept
             </span>
           </div>
 
-          <div className="hidden md:flex flex-col px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-800">
-            <span className="text-slate-400 text-[10px] uppercase font-sans font-semibold tracking-wider">EVALUATION LATENCY</span>
-            <span className="text-cyan-400 font-mono font-bold text-xs mt-0.5">&lt;0.038 ms</span>
+          <div className="hidden lg:flex flex-col px-3.5 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800">
+            <span className="text-slate-400 text-[11px] uppercase font-sans font-semibold tracking-wider">EVALUATION LATENCY</span>
+            <span className="text-cyan-400 font-mono font-bold text-sm mt-0.5">&lt;0.038 ms</span>
           </div>
 
           {/* Mode Switcher */}
-          <div className="flex items-center bg-slate-950/80 p-1 rounded-lg border border-slate-800">
+          <div className="flex items-center bg-slate-950/90 p-1.5 rounded-xl border border-slate-800">
             <button
               onClick={() => onToggleLive(false)}
-              className={`px-3 py-1.5 text-xs font-sans font-medium rounded-md transition ${
+              className={`px-3.5 py-1.5 text-xs font-sans font-semibold rounded-lg transition cursor-pointer ${
                 !isLive
                   ? "bg-cyan-500 text-slate-950 font-bold shadow-md"
                   : "text-slate-400 hover:text-slate-200"
@@ -107,7 +76,7 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
             <button
               onClick={() => onToggleLive(true)}
-              className={`px-3 py-1.5 text-xs font-sans font-medium rounded-md transition flex items-center gap-1.5 ${
+              className={`px-3.5 py-1.5 text-xs font-sans font-semibold rounded-lg transition flex items-center gap-1.5 cursor-pointer ${
                 isLive
                   ? "bg-amber-500 text-slate-950 font-bold shadow-md"
                   : "text-slate-400 hover:text-slate-200"
@@ -116,11 +85,21 @@ export const Header: React.FC<HeaderProps> = ({
               <Cpu className="w-3.5 h-3.5" /> Live GPU
             </button>
           </div>
+
+          <a
+            href="https://github.com/Hamza-HATTAB/interpose"
+            target="_blank"
+            rel="noreferrer"
+            className="px-3.5 py-2 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white font-sans text-xs font-semibold flex items-center gap-1.5 transition"
+          >
+            <span>GitHub</span>
+            <ExternalLink className="w-3.5 h-3.5 text-cyan-400" />
+          </a>
         </div>
       </div>
 
       {/* Navigation Tabs */}
-      <div className="max-w-7xl mx-auto px-4 flex items-center gap-2 overflow-x-auto border-t border-slate-800/80">
+      <div className="max-w-[1440px] mx-auto px-6 flex items-center gap-2 overflow-x-auto border-t border-slate-800/80">
         {[
           { id: "overview", label: "Executive Overview", icon: Activity },
           { id: "exploit_replay", label: "Exploit Replay & Attacks", icon: ShieldAlert },
