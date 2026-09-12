@@ -16,7 +16,7 @@
 
 INTERPOSE is the third and crowning project in my systems engineering portfolio targeting **remote AI Security Engineer, LLMOps Security Specialist, and Applied ML Safety roles at Canadian scale-ups** (Toronto/Montreal: Armilla AI, Private AI, Cohere, Coveo, Ada):
 
-1. **[Project 1 — Warrant](https://github.com/hhamzariadh/warrant):** *Built reliably* — Claim-level attributed multi-hop RAG with calibrated DeBERTa NLI and abstention contracts.
+1. **[Project 1 — Warrant](https://github.com/Hamza-HATTAB/warrant):** *Built reliably* — Claim-level attributed multi-hop RAG with calibrated DeBERTa NLI and abstention contracts.
 2. **[Project 2 — OptiServe](https://optiserve.vercel.app):** *Made fast & cheap* — PyTorch reasoning distillation, AirLLM layer-wise 70B streaming, and speculative decoding.
 3. **Project 3 — INTERPOSE (This Project):** *Break it on purpose* — Deterministic reference monitor with dynamic taint analysis and adaptive red-teaming, enforcing that agent security must be managed outside the probabilistic model.
 
@@ -109,7 +109,7 @@ The Next.js 14 frontend (`frontend/`) is a bespoke Cybersecurity Operations & Th
 ### Installation
 ```bash
 # Clone and enter repository
-git clone https://github.com/hhamzariadh/interpose.git
+git clone https://github.com/Hamza-HATTAB/interpose.git
 cd interpose
 
 # Install Python and Node dependencies
@@ -188,6 +188,6 @@ interpose/
 
 * **Candidate:** Hamza Riadh Hattab
 * **Email:** [hhamzariadh@gmail.com](mailto:hhamzariadh@gmail.com)
-* **GitHub:** [github.com/hhamzariadh](https://github.com/hhamzariadh)
+* **GitHub:** [github.com/Hamza-HATTAB](https://github.com/Hamza-HATTAB)
 * **Target Roles:** Remote AI Security Engineer / LLMOps Security Specialist / Applied ML Safety Engineer
 * **Location:** Algiers, Algeria (4-hour daily overlap with Toronto/Montreal EST)

@@ -34,7 +34,7 @@ export const Header: React.FC<HeaderProps> = ({
             Author: <strong className="text-slate-200">Hamza HATTAB</strong> (USTHB AI Eng)
           </span>
           <a
-            href="https://github.com/hhamzariadh"
+            href="https://github.com/Hamza-HATTAB/interpose"
             target="_blank"
             rel="noreferrer"
             className="text-taint hover:underline flex items-center gap-1"
